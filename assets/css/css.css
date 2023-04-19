@@ -32,7 +32,6 @@ h1 {
     text-align: right;
     padding: 0px 5px 0px 5px;
     min-height: 100px;
-    /* max-width: min-content; */
     overflow: hidden;
     container-type: size;
 }
@@ -61,8 +60,3 @@ button {
     height: 50%;
     max-width: 100%;
 }
-
-/* button{
-    padding: 0;
-    margin: 0;
-} */
