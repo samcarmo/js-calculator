@@ -11,9 +11,7 @@
 
 <body>
     <div class="container">
-        <!-- <div class="title"> -->
-            <h1>Calculator</h1>
-        <!-- </div> -->
+        <h1>Calculator</h1>
         <div class="calculator">
             <div class="visor">
                 <div id="calc">
