@@ -4,9 +4,13 @@ const screenResult = document.getElementById("result")
 
 var a, b, op, result
 
-// IT'S MISSING ROUND THE RESULT LIKE "result.toFixed(10)"
-
 const buttonPressed = e => {
+    if (result != null && e.target.value != "=") {
+        cleanVariables()
+        screenResult.innerText = ""
+        calc.innerText = ""
+        result = null
+    }
     calcule(e.target.value)
 }
 
@@ -46,10 +50,9 @@ function calcule(value) {
             result = (+a * +b) / 100
         }
         screenResult.innerText = result
+        cleanVariables()
     } else if (value === "CE") {
-        a = null
-        b = null
-        op = null
+        cleanVariables()
         result = null
         calc.innerText = ""
         screenResult.innerText = ""
@@ -69,4 +72,10 @@ function calcule(value) {
         calc.innerText += value
         screenResult.innerText = result
     }
+}
+
+function cleanVariables() {
+    a = null
+    b = null
+    op = null
 }
