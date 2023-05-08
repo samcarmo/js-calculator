@@ -5,7 +5,7 @@ const screenResult = document.getElementById("result")
 var a, b, op, result
 
 const buttonPressed = e => {
-    if (result != null && e.target.value != "=") {
+    if (result !== null && !['=', '-', '+', '/', 'x'].includes(e.target.value)) {
         cleanVariables()
         screenResult.innerText = ""
         calc.innerText = ""
@@ -13,11 +13,9 @@ const buttonPressed = e => {
     }
     calcule(e.target.value)
 }
-
 for (let button of buttons) {
     button.addEventListener("click", buttonPressed)
 }
-
 function calcule(value) {
     if (value != "=" && value != "CE" && value != "square" && value != "%") {
         result = null
@@ -27,16 +25,19 @@ function calcule(value) {
             } else {
                 a += value
             }
+            calc.innerText += value
         } else if (a != null && op != null && (!isNaN(value) || value == ".")) {
             if (b == null) {
                 b = value
             } else {
                 b += value
             }
+            calc.innerText += value
         } else if (a != null && isNaN(value)) {
             op = value
+            calc.innerText += value
+
         }
-        calc.innerText += value
     } else if (value === "=") {
         if (op === "+") {
             result = +a + +b
