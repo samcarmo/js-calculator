@@ -50,7 +50,25 @@ function calcule(value) {
         } else if (op === "%") {
             result = (+a * +b) / 100
         }
+
+        // console.log(typeof (result))
+        // resultString = result.toString()
+        // resultString = resultString.split(".")
+        // if (resultString.length == 2) {
+        //     resultInitial = resultString[0]
+        //     resultString = resultString[1]
+        //     // console.log(resultString.length)
+
+        //     if (resultString.length > 7) {
+        //         remove = 7 - resultString.length
+        //         resultFinal = resultString.slice(0, remove)
+        //         // console.log(resultInitial.concat('.', resultFinal))
+        //         screenResult.innerText = resultInitial.concat('.', resultFinal)
+        //     }
+        // } else {
         screenResult.innerText = result
+        // }
+
         cleanVariables()
     } else if (value === "CE") {
         cleanVariables()
