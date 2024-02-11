@@ -19,14 +19,11 @@ for (let button of buttons) {
 function calcule(value) {
     if (value != "=" && value != "CE" && value != "square" && value != "%") {
         result = null
-        console.log("calcule 1")
         if (op == null && (!isNaN(value) || value == ".")) {
             if (a == null) {
                 a = value
-                console.log("calcule 2")
             } else {
                 a += value
-                console.log("calcule 3")
             }
             calc.innerText += value
         } else if (a != null && op != null && (!isNaN(value) || value == ".")) {
@@ -39,7 +36,6 @@ function calcule(value) {
         } else if (a != null && isNaN(value)) {
             op = value
             calc.innerText += value
-
         }
     } else if (value === "=") {
         if (op === "+") {
