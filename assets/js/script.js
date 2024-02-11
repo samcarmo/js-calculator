@@ -19,11 +19,14 @@ for (let button of buttons) {
 function calcule(value) {
     if (value != "=" && value != "CE" && value != "square" && value != "%") {
         result = null
+        console.log("calcule 1")
         if (op == null && (!isNaN(value) || value == ".")) {
             if (a == null) {
                 a = value
+                console.log("calcule 2")
             } else {
                 a += value
+                console.log("calcule 3")
             }
             calc.innerText += value
         } else if (a != null && op != null && (!isNaN(value) || value == ".")) {
@@ -51,25 +54,10 @@ function calcule(value) {
             result = (+a * +b) / 100
         }
 
-        // console.log(typeof (result))
-        // resultString = result.toString()
-        // resultString = resultString.split(".")
-        // if (resultString.length == 2) {
-        //     resultInitial = resultString[0]
-        //     resultString = resultString[1]
-        //     // console.log(resultString.length)
-
-        //     if (resultString.length > 7) {
-        //         remove = 7 - resultString.length
-        //         resultFinal = resultString.slice(0, remove)
-        //         // console.log(resultInitial.concat('.', resultFinal))
-        //         screenResult.innerText = resultInitial.concat('.', resultFinal)
-        //     }
-        // } else {
+        
         screenResult.innerText = result
-        // }
-
         cleanVariables()
+        a = result
     } else if (value === "CE") {
         cleanVariables()
         result = null
